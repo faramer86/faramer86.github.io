@@ -1,0 +1,13 @@
+.home { text-align: center; padding-top: var(--space-16); }
+.home-name { font-size: clamp(2rem, 6vw, 2.6rem); font-weight: 700; letter-spacing: -0.03em; margin: 0 0 var(--space-2); }
+.home-dot { color: var(--accent); }
+.home-role { font-family: var(--font-mono); font-size: 0.95rem; margin: 0 0 var(--space-6); }
+.home-role span { color: var(--text-muted); }
+.home-summary { max-width: 40ch; margin: 0 auto var(--space-8); color: var(--text-muted); }
+.home-quick { display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap; }
+.home-quick a {
+  font-family: var(--font-mono); font-size: 0.85rem; color: var(--text);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  padding: var(--space-3) var(--space-4);
+}
+.home-quick a:hover { text-decoration: none; border-color: var(--accent); }
