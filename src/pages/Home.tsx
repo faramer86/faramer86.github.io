@@ -17,6 +17,16 @@ export default function Home() {
         <Link to="/publications">Publications →</Link>
         <Link to="/software">Software →</Link>
       </div>
+      <div className="home-social">
+        {profile.links.map((l) => {
+          const isExternal = !l.href.startsWith('mailto:') && !l.href.startsWith('tel:')
+          return isExternal ? (
+            <a key={l.label} href={l.href} target="_blank" rel="noreferrer">{l.label}</a>
+          ) : (
+            <a key={l.label} href={l.href}>{l.label}</a>
+          )
+        })}
+      </div>
     </div>
   )
 }

@@ -25,7 +25,7 @@ export function Nav() {
           </li>
         ))}
       </ul>
-      <Link to="/" className="nav-brand">{profile.initials}</Link>
+      <Link to="/" className="nav-brand" aria-label="Home">{profile.initials}</Link>
       <ul className="nav-group">
         {right.map((l) => (
           <li key={l.to}>
