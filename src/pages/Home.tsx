@@ -14,9 +14,9 @@ export default function Home() {
       </p>
       <p className="home-summary">{profile.summary}</p>
       <div className="home-quick">
-        <Link to="/posts">Posts →</Link>
         <Link to="/publications">Publications →</Link>
         <Link to="/software">Software →</Link>
+        <Link to="/posts">Posts →</Link>
         <a className="home-cv-btn" href={`${import.meta.env.BASE_URL}cv.pdf`} download>Download CV ↓</a>
       </div>
       <div className="home-social">
