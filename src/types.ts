@@ -1,0 +1,60 @@
+export interface PostMeta {
+  slug: string
+  title: string
+  date: string          // ISO 'YYYY-MM-DD'
+  summary: string
+  tags: string[]
+  draft: boolean
+  readingMinutes: number
+}
+
+export interface Post extends PostMeta {
+  content: string       // markdown body (frontmatter stripped)
+}
+
+export interface Publication {
+  title: string
+  authors: string       // full author string; own name wrapped in **bold** is fine
+  venue: string
+  year: number
+  doi?: string
+  url?: string
+  pdf?: string
+  code?: string
+  tags?: string[]
+}
+
+export interface Project {
+  name: string
+  blurb: string
+  stack: string[]
+  year: number
+  repo?: string
+  url?: string
+}
+
+export interface CvEntry {
+  when: string
+  what: string
+  where?: string
+  detail?: string
+}
+
+export interface CvSection {
+  heading: string
+  entries: CvEntry[]
+}
+
+export interface ProfileLink {
+  label: string
+  href: string
+}
+
+export interface Profile {
+  name: string
+  initials: string
+  role: string
+  affiliation: string
+  summary: string
+  links: ProfileLink[]
+}
