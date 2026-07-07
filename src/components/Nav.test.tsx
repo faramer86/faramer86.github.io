@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { Nav } from './Nav'
+import { profile } from '../data/profile'
 
 function renderAt(path: string) {
   return render(
@@ -14,7 +15,7 @@ function renderAt(path: string) {
 describe('Nav', () => {
   it('renders the brand initials and all section links', () => {
     renderAt('/')
-    expect(screen.getByText('NK')).toBeInTheDocument()
+    expect(screen.getByText(profile.initials)).toBeInTheDocument()
     for (const label of ['About', 'Publications', 'Software', 'Writing', 'CV']) {
       expect(screen.getByRole('link', { name: label })).toBeInTheDocument()
     }

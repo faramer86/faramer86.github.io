@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="home">
       <Seo title={profile.name} description={profile.summary} />
-      <h1 className="home-name">{profile.name}<span className="home-dot">.</span></h1>
+      <h1 className="home-name">{profile.name}<span className="home-dot" aria-hidden="true">.</span></h1>
       <p className="home-role">
         {profile.role} <span>· {profile.affiliation}</span>
       </p>
