@@ -1,15 +1,9 @@
 import { Link, useParams } from 'react-router-dom'
 import { getPost } from '../lib/posts'
+import { formatDate } from '../lib/formatDate'
 import { Prose } from '../components/Prose'
 import { Seo } from '../components/Seo'
 import './Post.css'
-
-function formatDate(iso: string): string {
-  const d = new Date(iso)
-  return Number.isNaN(d.getTime())
-    ? iso
-    : d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
-}
 
 export default function Post() {
   const { slug } = useParams<{ slug: string }>()

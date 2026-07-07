@@ -28,7 +28,7 @@ export function PublicationItem({ pub }: { pub: Publication }) {
     <li className="pub">
       <div className="pub-year">{pub.year}</div>
       <div className="pub-body">
-        <h3 className="pub-title">{pub.title}</h3>
+        <h2 className="pub-title">{pub.title}</h2>
         <Authors authors={pub.authors} />
         <div className="pub-venue">{pub.venue}</div>
         <div className="pub-links">

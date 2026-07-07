@@ -26,5 +26,6 @@ describe('Post', () => {
   it('shows a not-found message for an unknown slug', () => {
     renderPost('nope')
     expect(screen.getByText(/not found/i)).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /back to writing/i })).toHaveAttribute('href', '/writing')
   })
 })

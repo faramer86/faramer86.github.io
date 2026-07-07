@@ -5,7 +5,7 @@ export function ProjectItem({ project }: { project: Project }) {
   return (
     <li className="proj">
       <div className="proj-head">
-        <h3 className="proj-name">{project.name}</h3>
+        <h2 className="proj-name">{project.name}</h2>
         <span className="proj-year">{project.year}</span>
       </div>
       <p className="proj-blurb">{project.blurb}</p>
