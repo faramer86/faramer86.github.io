@@ -14,10 +14,12 @@ export function ProjectItem({ project }: { project: Project }) {
           <span key={s} className="proj-tag">{s}</span>
         ))}
       </div>
-      <div className="proj-links">
-        {project.repo && <a href={project.repo} target="_blank" rel="noreferrer">Repo</a>}
-        {project.url && <a href={project.url} target="_blank" rel="noreferrer">Link</a>}
-      </div>
+      {(project.repo || project.url) && (
+        <div className="proj-links">
+          {project.repo && <a href={project.repo} target="_blank" rel="noreferrer">Repo</a>}
+          {project.url && <a href={project.url} target="_blank" rel="noreferrer">Link</a>}
+        </div>
+      )}
     </li>
   )
 }

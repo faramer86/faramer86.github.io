@@ -1,5 +1,6 @@
 .pub { display: flex; gap: var(--space-4); padding: var(--space-6) 0; border-top: 1px solid var(--border); list-style: none; }
 .pub-year { font-family: var(--font-mono); color: var(--text-muted); flex: 0 0 3.5rem; }
+.pub-body { flex: 1; min-width: 0; }
 .pub-title { margin: 0 0 var(--space-2); font-size: 1.05rem; }
 .pub-authors { font-size: 0.9rem; }
 .pub-authors strong { color: var(--text); }
