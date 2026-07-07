@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom'
 import { profile } from '../data/profile'
 import { Seo } from '../components/Seo'
+import { AnimatedName } from '../components/AnimatedName'
 import './Home.css'
 
 export default function Home() {
   return (
     <div className="home">
       <Seo title={profile.name} description={profile.summary} />
-      <h1 className="home-name">{profile.name}<span className="home-dot" aria-hidden="true">.</span></h1>
+      <AnimatedName />
       <p className="home-role">
         {profile.role} <span>· {profile.affiliation}</span>
       </p>
