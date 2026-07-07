@@ -33,18 +33,6 @@ export interface Project {
   url?: string
 }
 
-export interface CvEntry {
-  when: string
-  what: string
-  where?: string
-  detail?: string
-}
-
-export interface CvSection {
-  heading: string
-  entries: CvEntry[]
-}
-
 export interface ProfileLink {
   label: string
   href: string

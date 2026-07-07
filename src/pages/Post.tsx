@@ -14,7 +14,7 @@ export default function Post() {
       <section>
         <Seo title="Not found · Nikita Kolosov" />
         <h1>Post not found</h1>
-        <p><Link to="/writing">← Back to writing</Link></p>
+        <p><Link to="/posts">← Back to posts</Link></p>
       </section>
     )
   }
@@ -27,7 +27,7 @@ export default function Post() {
         {formatDate(post.date)} · {post.readingMinutes} min read
       </div>
       <Prose>{post.content}</Prose>
-      <p className="post-back"><Link to="/writing">← Back to writing</Link></p>
+      <p className="post-back"><Link to="/posts">← Back to posts</Link></p>
     </article>
   )
 }

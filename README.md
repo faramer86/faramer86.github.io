@@ -29,8 +29,7 @@ Set `draft: true` to keep a post out of the build.
 - `src/data/profile.ts` — name, role, social links
 - `src/data/publications.ts` — publication list
 - `src/data/projects.ts` — software list
-- `src/data/cv.ts` — CV sections (+ set `cvPdf = '/cv.pdf'` and add `public/cv.pdf`)
-- `src/content/about.md` — About page
+- Replace `public/cv.pdf` with your real CV (linked from the Download CV button on the home page).
 
 ## Deploy
 Host-agnostic static build. For a subpath (e.g. GitHub Pages project site):

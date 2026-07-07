@@ -14,9 +14,20 @@ describe('Home', () => {
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(profile.name)
     expect(screen.getByText(new RegExp(profile.role))).toBeInTheDocument()
     expect(screen.getByText(profile.summary)).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /Writing/ })).toHaveAttribute('href', '/writing')
+    expect(screen.getByRole('link', { name: /Posts/ })).toHaveAttribute('href', '/posts')
     expect(screen.getByRole('link', { name: /Publications/ })).toHaveAttribute('href', '/publications')
     expect(screen.getByRole('link', { name: /Software/ })).toHaveAttribute('href', '/software')
+  })
+
+  it('renders a Download CV button linking to cv.pdf', () => {
+    render(
+      <MemoryRouter>
+        <Home />
+      </MemoryRouter>,
+    )
+    const cvLink = screen.getByRole('link', { name: /Download CV/i })
+    expect(cvLink.getAttribute('href')).toMatch(/cv\.pdf$/)
+    expect(cvLink).toHaveAttribute('download')
   })
 
   it('renders social profile links in the hero', () => {

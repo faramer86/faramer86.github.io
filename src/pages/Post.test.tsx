@@ -5,9 +5,9 @@ import Post from './Post'
 
 function renderPost(slug: string) {
   return render(
-    <MemoryRouter initialEntries={[`/writing/${slug}`]}>
+    <MemoryRouter initialEntries={[`/posts/${slug}`]}>
       <Routes>
-        <Route path="/writing/:slug" element={<Post />} />
+        <Route path="/posts/:slug" element={<Post />} />
       </Routes>
     </MemoryRouter>,
   )
@@ -26,6 +26,6 @@ describe('Post', () => {
   it('shows a not-found message for an unknown slug', () => {
     renderPost('nope')
     expect(screen.getByText(/not found/i)).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /back to writing/i })).toHaveAttribute('href', '/writing')
+    expect(screen.getByRole('link', { name: /back to posts/i })).toHaveAttribute('href', '/posts')
   })
 })

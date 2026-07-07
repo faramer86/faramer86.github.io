@@ -11,6 +11,8 @@
   padding: var(--space-3) var(--space-4);
 }
 .home-quick a:hover { text-decoration: none; border-color: var(--accent); }
+.home-cv-btn { background: var(--accent); color: #fff !important; border-color: var(--accent); }
+.home-cv-btn:hover { background: var(--accent); opacity: 0.88; border-color: var(--accent); }
 .home-social {
   display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;
   margin-top: var(--space-6);

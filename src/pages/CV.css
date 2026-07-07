@@ -1,9 +1,0 @@
-.cv-head { display: flex; align-items: baseline; justify-content: space-between; }
-.cv-pdf { font-family: var(--font-mono); font-size: 0.8rem; }
-.cv-section { margin-top: var(--space-8); }
-.cv-section h2 { font-size: 1.1rem; border-bottom: 1px solid var(--border); padding-bottom: var(--space-2); }
-.cv-entry { display: flex; gap: var(--space-4); padding: var(--space-3) 0; }
-.cv-when { font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); flex: 0 0 5rem; }
-.cv-what { flex: 1; min-width: 0; }
-.cv-where { color: var(--text-muted); }
-.cv-detail { color: var(--text-muted); font-size: 0.9rem; margin-top: var(--space-1); }
