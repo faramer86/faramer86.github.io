@@ -1,5 +1,7 @@
+import type { CSSProperties } from 'react'
 import { NavLink } from 'react-router-dom'
 import { ThemeToggle } from './ThemeToggle'
+import { sectionColor } from '../data/sectionColors'
 import './Nav.css'
 
 const links = [
@@ -15,7 +17,13 @@ export function Nav() {
       <ul className="nav-links">
         {links.map((l) => (
           <li key={l.to}>
-            <NavLink to={l.to} end={l.end}>{l.label}</NavLink>
+            <NavLink
+              to={l.to}
+              end={l.end}
+              style={{ '--section-color': sectionColor[l.to] } as CSSProperties}
+            >
+              {l.label}
+            </NavLink>
           </li>
         ))}
       </ul>

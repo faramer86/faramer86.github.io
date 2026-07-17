@@ -10,7 +10,15 @@
   border: 1px solid var(--border); border-radius: var(--radius);
   padding: var(--space-3) var(--space-4);
 }
-.home-quick a:hover { text-decoration: none; border-color: var(--accent); }
+.home-quick a { transition: color var(--transition), border-color var(--transition), background var(--transition); }
+.home-quick a:hover { text-decoration: none; }
+/* Section buttons adopt their section color on hover (border + text + faint tint). */
+.home-link:hover {
+  color: var(--section-color);
+  border-color: var(--section-color);
+  background: color-mix(in srgb, var(--section-color) 14%, transparent);
+}
+/* Download CV stays constant (filled accent), regardless of hover. */
 .home-cv-btn { background: var(--accent); color: #fff !important; border-color: var(--accent); }
 .home-cv-btn:hover { background: var(--accent); opacity: 0.88; border-color: var(--accent); }
 .home-social {

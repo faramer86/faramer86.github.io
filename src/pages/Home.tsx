@@ -1,9 +1,17 @@
+import type { CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
 import { profile } from '../data/profile'
+import { sectionColor } from '../data/sectionColors'
 import { Seo } from '../components/Seo'
 import { AnimatedName } from '../components/AnimatedName'
 import { BrandIcon } from '../components/BrandIcon'
 import './Home.css'
+
+const quickLinks = [
+  { to: '/publications', label: 'Publications' },
+  { to: '/software', label: 'Software' },
+  { to: '/posts', label: 'Posts' },
+]
 
 export default function Home() {
   return (
@@ -15,9 +23,16 @@ export default function Home() {
       </p>
       <p className="home-summary">{profile.summary}</p>
       <div className="home-quick">
-        <Link to="/publications">Publications →</Link>
-        <Link to="/software">Software →</Link>
-        <Link to="/posts">Posts →</Link>
+        {quickLinks.map((q) => (
+          <Link
+            key={q.to}
+            to={q.to}
+            className="home-link"
+            style={{ '--section-color': sectionColor[q.to] } as CSSProperties}
+          >
+            {q.label} →
+          </Link>
+        ))}
         <a className="home-cv-btn" href={`${import.meta.env.BASE_URL}cv.pdf`} download>Download CV ↓</a>
       </div>
       <div className="home-social">
