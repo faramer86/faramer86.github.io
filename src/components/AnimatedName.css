@@ -1,12 +1,9 @@
-/* The animated hero name. Letters after the first collapse right-to-left on
-   hover; the accent dot rides the frontier and blinks like a caret. */
 .home-name {
   cursor: default;
 }
 
-/* All three align by the bottom edge. The collapsing letters use
-   overflow:hidden, which shifts their baseline to the bottom margin edge;
-   bottom-aligning every piece keeps "N", the letters, and the dot on one line. */
+/* All three align by the bottom edge so "N", the letters, and the dot stay on
+   one line even as letters collapse. */
 .home-name-first,
 .home-letter,
 .home-dot {
@@ -19,34 +16,49 @@
   overflow: hidden;
   white-space: pre; /* preserve the space between first + last name */
   max-width: 1.2em;
-  transition: max-width 0.14s ease, opacity 0.12s ease;
-}
-
-.home-letter[data-gone] {
-  max-width: 0;
-  opacity: 0;
 }
 
 .home-dot {
   color: var(--accent);
 }
 
-/* Terminal-caret blink while hovering. */
-.home-name:hover .home-dot {
-  animation: name-dot-blink 0.6s steps(1, end) infinite;
+/* Deletion styles, cycled per hover by AnimatedName (applied via inline
+   animation). Letters collapse right-to-left to "N.", then nk-appearIn retypes
+   them on mouse-leave. */
+@keyframes nk-eraseAway {
+  from { max-width: 1.2em; opacity: 1; }
+  to { max-width: 0; opacity: 0; }
 }
 
-@keyframes name-dot-blink {
-  50% {
-    opacity: 0;
-  }
+@keyframes nk-bounceAway {
+  0% { max-width: 1.2em; transform: translateY(0) scale(1); opacity: 1; }
+  30% { max-width: 1.2em; transform: translateY(-0.55em) scale(1.18); opacity: 1; }
+  60% { max-width: 1.2em; transform: translateY(-0.1em) scale(1.05); opacity: 1; }
+  100% { max-width: 0; transform: translateY(0.5em) scale(0.3); opacity: 0; }
+}
+
+@keyframes nk-zapAway {
+  0% { max-width: 1.2em; opacity: 1; color: inherit; text-shadow: none; transform: none; }
+  22% { color: #eaf3ff; text-shadow: 0 0 10px #7db8ff, 0 0 22px #7db8ff, 0 0 34px #4f8bff; transform: scale(1.22) skewX(-11deg); }
+  45% { color: #fff; text-shadow: 0 0 6px #bcd8ff; transform: scale(1.05) skewX(6deg); }
+  100% { max-width: 0; opacity: 0; transform: scale(0.12) skewX(-14deg); text-shadow: none; }
+}
+
+@keyframes nk-appearIn {
+  from { max-width: 0; opacity: 0; transform: scale(0.6); }
+  to { max-width: 1.2em; opacity: 1; transform: none; }
+}
+
+/* Terminal-caret blink while hovering. */
+.home-name:hover .home-dot {
+  animation: nk-dotBlink 0.6s steps(1, end) infinite;
+}
+
+@keyframes nk-dotBlink {
+  50% { opacity: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .home-letter {
-    transition: none;
-  }
-  .home-name:hover .home-dot {
-    animation: none;
-  }
+  .home-letter { animation: none !important; }
+  .home-name:hover .home-dot { animation: none; }
 }
