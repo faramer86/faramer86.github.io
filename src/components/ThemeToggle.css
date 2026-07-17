@@ -11,3 +11,11 @@
   transition: background var(--transition);
 }
 .theme-toggle:hover { background: var(--border); }
+
+/* Touch devices: meet the 44px minimum tap target (desktop stays compact). */
+@media (pointer: coarse) {
+  .theme-toggle {
+    width: 44px;
+    height: 44px;
+  }
+}
