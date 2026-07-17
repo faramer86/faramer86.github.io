@@ -30,23 +30,13 @@ describe('Home', () => {
     expect(cvLink).toHaveAttribute('download')
   })
 
-  it('renders social profile links in the hero', () => {
+  it('does not duplicate contact links in the hero (they live in the footer)', () => {
     render(
       <MemoryRouter>
         <Home />
       </MemoryRouter>,
     )
-    const github = screen.getByRole('link', { name: 'GitHub' })
-    expect(github).toHaveAttribute('target', '_blank')
-
-    const scholar = screen.getByRole('link', { name: 'Google Scholar' })
-    expect(scholar).toHaveAttribute('target', '_blank')
-
-    const orcid = screen.getByRole('link', { name: 'ORCID' })
-    expect(orcid).toHaveAttribute('target', '_blank')
-
-    const email = screen.getByRole('link', { name: 'Email' })
-    expect(email).toHaveAttribute('href', 'mailto:nikolosov86@gmail.com')
-    expect(email).not.toHaveAttribute('target')
+    expect(screen.queryByRole('link', { name: 'GitHub' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: 'ORCID' })).not.toBeInTheDocument()
   })
 })
