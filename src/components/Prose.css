@@ -1,4 +1,6 @@
-.prose { font-family: var(--font-sans); line-height: 1.75; }
+/* Cap the reading measure near ~66 chars for comfortable long-form reading.
+   Left-aligned so the body's left edge stays flush with the post title. */
+.prose { font-family: var(--font-sans); line-height: 1.75; max-width: 60ch; }
 .prose h1, .prose h2, .prose h3 { line-height: 1.25; margin-top: var(--space-8); }
 .prose h2 { font-size: 1.3rem; }
 .prose h3 { font-size: 1.1rem; }
