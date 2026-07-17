@@ -14,10 +14,14 @@
 .home-cv-btn { background: var(--accent); color: #fff !important; border-color: var(--accent); }
 .home-cv-btn:hover { background: var(--accent); opacity: 0.88; border-color: var(--accent); }
 .home-social {
-  display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;
+  display: flex; gap: var(--space-2); justify-content: center; flex-wrap: wrap;
   margin-top: var(--space-6);
 }
-.home-social a {
-  font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);
+/* Icon-only links: 44px hit area (accessible tap target) with a 20px glyph. */
+.home-social-link {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 44px; min-height: 44px;
+  color: var(--text-muted);
+  transition: color var(--transition);
 }
-.home-social a:hover { color: var(--text); }
+.home-social-link:hover { color: var(--text); text-decoration: none; }

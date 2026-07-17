@@ -36,6 +36,7 @@ export interface Project {
 export interface ProfileLink {
   label: string
   href: string
+  icon: string
 }
 
 export interface Profile {

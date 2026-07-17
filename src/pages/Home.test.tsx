@@ -30,16 +30,18 @@ describe('Home', () => {
     expect(cvLink).toHaveAttribute('download')
   })
 
-  it('renders contact links in the hero', () => {
+  it('renders labeled contact icon links in the hero (no Email)', () => {
     render(
       <MemoryRouter>
         <Home />
       </MemoryRouter>,
     )
-    expect(screen.getByRole('link', { name: 'GitHub' })).toHaveAttribute('target', '_blank')
-    expect(screen.getByRole('link', { name: 'ORCID' })).toHaveAttribute('target', '_blank')
-    const email = screen.getByRole('link', { name: 'Email' })
-    expect(email).toHaveAttribute('href', 'mailto:nikolosov86@gmail.com')
-    expect(email).not.toHaveAttribute('target')
+    for (const name of ['GitHub', 'Google Scholar', 'ORCID', 'LinkedIn', 'ResearchGate']) {
+      const link = screen.getByRole('link', { name })
+      expect(link).toHaveAttribute('target', '_blank')
+      // icon-only: renders an SVG glyph, not the text label
+      expect(link.querySelector('svg')).toBeInTheDocument()
+    }
+    expect(screen.queryByRole('link', { name: 'Email' })).not.toBeInTheDocument()
   })
 })
