@@ -16,3 +16,12 @@
   .nav { flex-wrap: wrap; gap: var(--space-3); }
   .nav-toggle { position: static; }
 }
+
+/* Touch devices (or narrow viewports): give nav links a >=44px tap height
+   without changing the compact look on pointer:fine desktop screens. */
+@media (pointer: coarse), (max-width: 640px) {
+  .nav-links a {
+    display: inline-block;
+    padding-block: 0.7rem;
+  }
+}

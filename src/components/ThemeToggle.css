@@ -11,3 +11,12 @@
   transition: background var(--transition);
 }
 .theme-toggle:hover { background: var(--border); }
+
+/* Touch devices (or narrow viewports): meet the 44px minimum tap target.
+   Pointer-fine desktops keep the compact 32px control. */
+@media (pointer: coarse), (max-width: 640px) {
+  .theme-toggle {
+    width: 44px;
+    height: 44px;
+  }
+}
