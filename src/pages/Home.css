@@ -1,22 +1,5 @@
-.home { text-align: center; padding-top: var(--space-16); position: relative; }
-/* Technical dot grid behind the hero, fading out toward the edges. Monochrome
-   and understated; gives the glass buttons a subtle texture to sit on. */
-.home::before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  pointer-events: none;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  width: min(1100px, 94vw);
-  height: 560px;
-  background-image: radial-gradient(var(--dot-color) 1.1px, transparent 1.4px);
-  background-size: 24px 24px;
-  background-position: center;
-  -webkit-mask-image: radial-gradient(ellipse 70% 74% at 50% 42%, #000 24%, transparent 100%);
-  mask-image: radial-gradient(ellipse 70% 74% at 50% 42%, #000 24%, transparent 100%);
-}
+/* The dotted grid now lives on <body> (whole site); the hero sits open on it. */
+.home { text-align: center; padding-top: var(--space-16); }
 .home-name { font-size: clamp(2rem, 6vw, 2.6rem); font-weight: 700; letter-spacing: -0.03em; margin: 0 0 var(--space-2); }
 /* .home-name letter-collapse animation + accent dot live in AnimatedName.css */
 .home-role { font-family: var(--font-mono); font-size: 0.95rem; margin: 0 0 var(--space-6); }

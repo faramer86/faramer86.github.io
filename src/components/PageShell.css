@@ -1,0 +1,13 @@
+.page-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: var(--space-8) var(--space-8) var(--space-12);
+  box-shadow: var(--glass-shadow);
+}
+
+@media (max-width: 640px) {
+  .page-box {
+    padding: var(--space-6) var(--space-4) var(--space-8);
+  }
+}
