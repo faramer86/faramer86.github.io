@@ -1,4 +1,6 @@
+import type { CSSProperties } from 'react'
 import type { Publication } from '../types'
+import { venueColor } from '../data/venueColors'
 import './PublicationItem.css'
 
 function Authors({ authors }: { authors: string }) {
@@ -30,7 +32,12 @@ export function PublicationItem({ pub }: { pub: Publication }) {
       <div className="pub-body">
         <h2 className="pub-title">{pub.title}</h2>
         <Authors authors={pub.authors} />
-        <div className="pub-venue">{pub.venue}</div>
+        <div
+          className="pub-venue"
+          style={{ '--venue-color': venueColor[pub.venue] ?? 'var(--accent)' } as CSSProperties}
+        >
+          {pub.venue}
+        </div>
         <div className="pub-links">
           {links
             .filter(([, href]) => href)

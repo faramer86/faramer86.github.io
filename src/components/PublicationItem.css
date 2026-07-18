@@ -4,5 +4,19 @@
 .pub-title { margin: 0 0 var(--space-2); font-size: 1.2rem; line-height: 1.35; font-weight: 700; }
 .pub-authors { font-size: 0.9rem; }
 .pub-authors strong { color: var(--text); }
-.pub-venue { font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); margin-top: var(--space-1); }
+/* Journal badge — same treatment as the platform badge on Posts, tinted per
+   journal via --venue-color (set inline from venueColors.ts). fit-content keeps
+   the pill only as wide as the journal name while staying on its own line. */
+.pub-venue {
+  display: block;
+  width: fit-content;
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--venue-color, var(--accent));
+  border: 1px solid color-mix(in srgb, var(--venue-color, var(--accent)) 32%, transparent);
+  background: color-mix(in srgb, var(--venue-color, var(--accent)) 12%, transparent);
+  padding: 0.12rem 0.45rem;
+  border-radius: 6px;
+}
 .pub-links { display: flex; gap: var(--space-3); margin-top: var(--space-2); font-family: var(--font-mono); font-size: 0.8rem; }
