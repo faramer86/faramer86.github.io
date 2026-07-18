@@ -4,5 +4,5 @@
 .proj-year { font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); }
 .proj-blurb { margin: var(--space-2) 0; color: var(--text-muted); }
 .proj-stack { display: flex; gap: var(--space-2); flex-wrap: wrap; }
-.proj-tag { font-family: var(--font-mono); font-size: 0.75rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.1rem 0.5rem; }
+.proj-tag { font-family: var(--font-mono); font-size: 0.75rem; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 0.15rem 0.6rem; }
 .proj-links { display: flex; gap: var(--space-3); margin-top: var(--space-3); font-family: var(--font-mono); font-size: 0.8rem; }

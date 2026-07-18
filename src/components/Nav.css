@@ -11,7 +11,7 @@
   align-items: center;
   gap: var(--space-1);
   padding: 0.32rem 0.4rem;
-  border-radius: 999px;
+  border-radius: 14px;
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   -webkit-backdrop-filter: blur(14px) saturate(1.3);
@@ -24,7 +24,7 @@
   display: inline-block;
   color: var(--text-muted);
   padding: 0.46rem 0.85rem;
-  border-radius: 999px;
+  border-radius: 8px;
   transition: color var(--transition), background var(--transition);
 }
 .nav-links a:hover { color: var(--section-color, var(--text)); text-decoration: none; }
@@ -38,7 +38,7 @@
 .nav-toggle { display: inline-flex; margin-left: var(--space-1); }
 
 @media (max-width: 640px) {
-  .nav-pill { flex-wrap: wrap; justify-content: center; border-radius: 20px; }
+  .nav-pill { flex-wrap: wrap; justify-content: center; }
 }
 
 /* Touch devices (or narrow viewports): larger tap targets. */

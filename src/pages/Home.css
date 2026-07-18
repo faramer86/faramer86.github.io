@@ -7,7 +7,7 @@
 .home-badge {
   display: inline-flex; align-items: center; gap: 0.5rem;
   font-family: var(--font-mono); font-size: 0.72rem; line-height: 1;
-  padding: 0.42rem 0.72rem; border-radius: 999px; white-space: nowrap;
+  padding: 0.42rem 0.72rem; border-radius: var(--radius); white-space: nowrap;
   color: var(--text);
   background: color-mix(in srgb, var(--text) 6%, transparent);
   border: 1px solid color-mix(in srgb, var(--text) 12%, transparent);
