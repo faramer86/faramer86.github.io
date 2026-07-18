@@ -2,15 +2,14 @@
 .home { text-align: center; padding-top: var(--space-16); }
 .home-name { font-size: clamp(2rem, 6vw, 2.6rem); font-weight: 700; letter-spacing: -0.03em; margin: 0 0 var(--space-2); }
 /* .home-name letter-collapse animation + accent dot live in AnimatedName.css */
-/* Dot-chip badges under the name: neutral chip + a colored status dot. */
-.home-badges { display: flex; gap: var(--space-2); justify-content: center; flex-wrap: wrap; margin: 0 auto var(--space-6); max-width: 34rem; }
+/* Dot-label badges under the name: a colored status dot + label, no box, so
+   they read as metadata rather than buttons. */
+.home-badges { display: flex; gap: 1.35rem; justify-content: center; flex-wrap: wrap; margin: 0 auto var(--space-6); max-width: 34rem; }
 .home-badge {
   display: inline-flex; align-items: center; gap: 0.5rem;
-  font-family: var(--font-mono); font-size: 0.72rem; line-height: 1;
-  padding: 0.42rem 0.72rem; border-radius: var(--radius); white-space: nowrap;
+  font-family: var(--font-mono); font-size: 0.78rem; line-height: 1;
+  white-space: nowrap;
   color: var(--text);
-  background: color-mix(in srgb, var(--text) 6%, transparent);
-  border: 1px solid color-mix(in srgb, var(--text) 12%, transparent);
 }
 .home-badge::before {
   content: ''; width: 7px; height: 7px; border-radius: 50%;
