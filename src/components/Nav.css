@@ -37,13 +37,30 @@
 
 .nav-toggle { display: inline-flex; margin-left: var(--space-1); }
 
+/* Mobile: compact the pill so the four links + toggle stay on ONE row.
+   Previously the pill wrapped, dropping the toggle onto its own line where it
+   read as an orphaned square. The pill now sits closer to the screen edges to
+   reclaim width. */
 @media (max-width: 640px) {
-  .nav-pill { flex-wrap: wrap; justify-content: center; }
+  .nav { padding-inline: var(--space-2); }
+  .nav-pill { max-width: 100%; flex-wrap: nowrap; gap: 0.1rem; padding: 0.25rem 0.3rem; }
+  .nav-links { gap: 0.1rem; }
+  .nav-links a { padding-inline: 0.4rem; font-size: 0.78rem; }
+  .nav-toggle { margin-left: 0.1rem; }
 }
 
-/* Touch devices (or narrow viewports): larger tap targets. */
+/* Smallest phones (~320px): trim labels a touch more so nothing clips. */
+@media (max-width: 360px) {
+  .nav { padding-inline: var(--space-1); }
+  .nav-links a { font-size: 0.7rem; padding-inline: 0.28rem; }
+}
+
+/* Touch devices (or narrow viewports): 44px minimum tap target height. */
 @media (pointer: coarse), (max-width: 640px) {
   .nav-links a {
-    padding-block: 0.6rem;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-block: 0;
   }
 }

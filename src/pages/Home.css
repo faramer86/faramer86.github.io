@@ -1,6 +1,8 @@
 /* The dotted grid now lives on <body> (whole site); the hero sits open on it. */
 .home { text-align: center; padding-top: var(--space-16); }
-.home-name { font-size: clamp(2rem, 6vw, 2.6rem); font-weight: 700; letter-spacing: -0.03em; margin: 0 0 var(--space-2); }
+/* Floor lowered from 2rem so "Nikita Kolosov." keeps headroom on ~320px phones
+   (the letter spans can't wrap, so the name has to scale, not reflow). */
+.home-name { font-size: clamp(1.85rem, 7vw, 2.6rem); font-weight: 700; letter-spacing: -0.03em; margin: 0 0 var(--space-2); }
 /* .home-name letter-collapse animation + accent dot live in AnimatedName.css */
 /* Dot-label badges under the name: a colored status dot + label, no box, so
    they read as metadata rather than buttons. */
