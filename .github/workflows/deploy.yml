@@ -31,13 +31,14 @@ jobs:
 
       - run: npm test
 
-      # Base path: '/' for a <user>.github.io site, '/<repo>/' for a project repo.
+      # Base path: '/' for a custom domain (public/CNAME) or a <user>.github.io
+      # site; '/<repo>/' for a plain project repo.
       - name: Compute base path
         id: base
         run: |
           name="${GITHUB_REPOSITORY##*/}"
           owner="${GITHUB_REPOSITORY%%/*}"
-          if [ "$name" = "$owner.github.io" ]; then
+          if [ -f public/CNAME ] || [ "$name" = "$owner.github.io" ]; then
             echo "base=/" >> "$GITHUB_OUTPUT"
           else
             echo "base=/$name/" >> "$GITHUB_OUTPUT"

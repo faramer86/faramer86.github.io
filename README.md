@@ -37,6 +37,22 @@ One-time setup:
 
 Every later `git push` to `main` redeploys automatically.
 
+### Custom domain (nkolosov.bio)
+
+`public/CNAME` holds the domain, so the build serves at the domain root. To make
+it resolve:
+
+1. Register `nkolosov.bio` at a registrar.
+2. Add DNS records for the apex domain (point it at GitHub Pages):
+   - `A` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+   - `AAAA` → `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`
+   - (optional) `CNAME` for `www` → `<user>.github.io`
+3. In **Settings → Pages → Custom domain**, enter `nkolosov.bio` and save; once DNS
+   verifies, tick **Enforce HTTPS**.
+
+To change or remove the domain later, edit/delete `public/CNAME` (and update the
+Pages setting).
+
 ### Manual build (any host)
 `npm run build` → serve `dist/`. For a subpath, set the base first:
 `VITE_BASE=/repo-name/ npm run build`.
