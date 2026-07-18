@@ -10,24 +10,24 @@
   --maxw: 44rem;
   --transition: 160ms ease;
 
-  /* light theme (default) */
-  --bg: #ffffff;
-  --surface: #f5f6f8;
-  --text: #111214;
-  --text-muted: #6b7280;
-  --border: #e5e7eb;
+  /* light theme (default) — warm "Moleskine paper" cream */
+  --bg: #f7f2e7;
+  --surface: #efe8d7;
+  --text: #24211a;
+  --text-muted: #6e6656;
+  --border: #e3d9c4;
   --accent: #2563eb;
   --accent-muted: #93b4f5;
-  --code-bg: #f3f4f6;
+  --code-bg: #eee6d3;
 
-  /* technical dot-grid (light: dark dots) */
-  --dot-color: rgba(17, 18, 20, 0.07);
+  /* technical dot-grid (light: warm dark dots) */
+  --dot-color: rgba(64, 52, 33, 0.09);
 
   /* glassmorphism (light) */
-  --glass-bg: rgba(255, 255, 255, 0.5);
-  --glass-border: rgba(17, 18, 20, 0.1);
-  --glass-highlight: rgba(255, 255, 255, 0.8);
-  --glass-shadow: 0 6px 22px -10px rgba(17, 18, 20, 0.25);
+  --glass-bg: rgba(255, 253, 246, 0.55);
+  --glass-border: rgba(64, 52, 33, 0.12);
+  --glass-highlight: rgba(255, 255, 255, 0.85);
+  --glass-shadow: 0 6px 22px -10px rgba(64, 52, 33, 0.22);
 }
 
 [data-theme='dark'] {
