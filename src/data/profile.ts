@@ -6,7 +6,7 @@ export const profile: Profile = {
   role: 'PhD candidate',
   affiliation: 'Clinical Genomics & Biomedical Informatics',
   summary:
-    'I study the genetics of complex traits to make precision medicine work better — and work for everyone.',
+    'I study the genetics of complex traits and build tools to make precision medicine truly precise — and precise for everyone.',
   badges: ['PhD candidate', 'Biomedical Informatics', 'Machine Learning'],
   links: [
     { label: 'GitHub', href: 'https://github.com/faramer86', icon: 'github' },
