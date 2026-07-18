@@ -4,7 +4,7 @@ import { PageShell } from '../components/PageShell'
 import { Seo } from '../components/Seo'
 
 export default function Publications() {
-  const sorted = [...publications].sort((a, b) => b.year - a.year)
+  const sorted = [...publications].sort((a, b) => (a.date < b.date ? 1 : -1))
   return (
     <PageShell>
       <Seo title="Publications · Nikita Kolosov" />

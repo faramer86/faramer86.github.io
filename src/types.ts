@@ -17,6 +17,7 @@ export interface Publication {
   authors: string       // full author string; own name wrapped in **bold** is fine
   venue: string
   year: number
+  date: string          // ISO 'YYYY-MM-DD', used for sorting
   doi?: string
   url?: string
   pdf?: string
