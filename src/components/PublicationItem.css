@@ -4,14 +4,5 @@
 .pub-title { margin: 0 0 var(--space-2); font-size: 1.05rem; }
 .pub-authors { font-size: 0.9rem; }
 .pub-authors strong { color: var(--text); }
-/* Journal name as an accent-tinted badge. */
-.pub-venue {
-  display: inline-block;
-  margin-top: var(--space-2);
-  font-family: var(--font-mono); font-size: 0.72rem; line-height: 1;
-  padding: 0.3rem 0.55rem; border-radius: 6px;
-  color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 12%, transparent);
-  border: 1px solid color-mix(in srgb, var(--accent) 32%, transparent);
-}
+.pub-venue { font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); margin-top: var(--space-1); }
 .pub-links { display: flex; gap: var(--space-3); margin-top: var(--space-2); font-family: var(--font-mono); font-size: 0.8rem; }
