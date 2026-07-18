@@ -15,6 +15,9 @@
   --cell-size: 11px;
   --cell-gap: 3px;
   flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   padding-top: 2px;
 }
 .pub-heatmap-grid {
@@ -54,12 +57,45 @@
   outline-offset: 1px;
 }
 
-/* On narrow screens the heatmap wraps below the title; give it a little air. */
+/* Tiny journal legend under the heatmap (swatch + short journal name). */
+.pub-heatmap-legend {
+  list-style: none;
+  margin: 9px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 4px 9px;
+  max-width: 192px;
+}
+.pub-heatmap-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  line-height: 1.1;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.pub-heatmap-legend-item i {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  flex: 0 0 auto;
+}
+
+/* On narrow screens the heatmap wraps below the title; left-align it. */
 @media (max-width: 640px) {
   .pub-header {
     gap: var(--space-4);
   }
   .pub-heatmap {
     --cell-size: 12px;
+    align-items: flex-start;
+  }
+  .pub-heatmap-legend {
+    justify-content: flex-start;
+    max-width: 240px;
   }
 }
