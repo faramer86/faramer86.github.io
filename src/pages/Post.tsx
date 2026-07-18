@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import { getPost } from '../lib/posts'
 import { formatDate } from '../lib/formatDate'
 import { Prose } from '../components/Prose'
+import { PageShell } from '../components/PageShell'
 import { Seo } from '../components/Seo'
 import './Post.css'
 
@@ -11,16 +12,16 @@ export default function Post() {
 
   if (!post) {
     return (
-      <section>
+      <PageShell>
         <Seo title="Not found · Nikita Kolosov" />
         <h1>Post not found</h1>
         <p><Link to="/posts">← Back to posts</Link></p>
-      </section>
+      </PageShell>
     )
   }
 
   return (
-    <article className="post">
+    <PageShell>
       <Seo title={`${post.title} · Nikita Kolosov`} description={post.summary} />
       <h1 className="post-title">{post.title}</h1>
       <div className="post-meta">
@@ -28,6 +29,6 @@ export default function Post() {
       </div>
       <Prose>{post.content}</Prose>
       <p className="post-back"><Link to="/posts">← Back to posts</Link></p>
-    </article>
+    </PageShell>
   )
 }
