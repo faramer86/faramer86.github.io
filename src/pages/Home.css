@@ -1,4 +1,26 @@
-.home { text-align: center; padding-top: var(--space-16); }
+.home { text-align: center; padding-top: var(--space-16); position: relative; }
+/* Subtle palette-tinted ambient glow — gives the glass buttons something to
+   refract. Kept very soft so the hero still reads as minimal. */
+.home::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  left: 50%;
+  top: 42%;
+  transform: translate(-50%, -50%);
+  width: min(720px, 92%);
+  height: 360px;
+  background:
+    radial-gradient(42% 55% at 28% 42%, rgba(239, 71, 111, 0.10), transparent 70%),
+    radial-gradient(46% 58% at 74% 34%, rgba(17, 138, 178, 0.14), transparent 70%),
+    radial-gradient(40% 52% at 56% 74%, rgba(6, 214, 160, 0.09), transparent 72%);
+  filter: blur(40px);
+  opacity: 0.45; /* subtler over the light background */
+}
+[data-theme='dark'] .home::before {
+  opacity: 1;
+}
 .home-name { font-size: clamp(2rem, 6vw, 2.6rem); font-weight: 700; letter-spacing: -0.03em; margin: 0 0 var(--space-2); }
 /* .home-name letter-collapse animation + accent dot live in AnimatedName.css */
 .home-role { font-family: var(--font-mono); font-size: 0.95rem; margin: 0 0 var(--space-6); }
@@ -7,20 +29,32 @@
 .home-quick { display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap; }
 .home-quick a {
   font-family: var(--font-mono); font-size: 0.85rem; color: var(--text);
-  border: 1px solid var(--border); border-radius: var(--radius);
+  border: 1px solid var(--glass-border); border-radius: var(--radius);
   padding: var(--space-3) var(--space-4);
+  transition: color var(--transition), border-color var(--transition), background var(--transition), box-shadow var(--transition);
 }
-.home-quick a { transition: color var(--transition), border-color var(--transition), background var(--transition); }
 .home-quick a:hover { text-decoration: none; }
-/* Section buttons adopt their section color on hover (border + text + faint tint). */
+/* Frosted glass on the three section buttons. */
+.home-link {
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(12px) saturate(1.3);
+  backdrop-filter: blur(12px) saturate(1.3);
+  box-shadow: inset 0 1px 0 var(--glass-highlight), var(--glass-shadow);
+}
+/* Section buttons adopt their section color on hover (border + text + frosted tint). */
 .home-link:hover {
   color: var(--section-color);
   border-color: var(--section-color);
-  background: color-mix(in srgb, var(--section-color) 14%, transparent);
+  background: color-mix(in srgb, var(--section-color) 18%, transparent);
 }
-/* Download CV stays constant (filled accent), regardless of hover. */
-.home-cv-btn { background: var(--accent); color: #fff !important; border-color: var(--accent); }
-.home-cv-btn:hover { background: var(--accent); opacity: 0.88; border-color: var(--accent); }
+/* Download CV stays a solid accent CTA (higher specificity beats .home-quick a). */
+.home-quick a.home-cv-btn {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: var(--glass-shadow);
+}
+.home-quick a.home-cv-btn:hover { opacity: 0.9; }
 .home-social {
   display: flex; gap: var(--space-2); justify-content: center; flex-wrap: wrap;
   margin-top: var(--space-6);

@@ -19,6 +19,12 @@
   --accent: #2563eb;
   --accent-muted: #93b4f5;
   --code-bg: #f3f4f6;
+
+  /* glassmorphism (light) */
+  --glass-bg: rgba(255, 255, 255, 0.5);
+  --glass-border: rgba(17, 18, 20, 0.1);
+  --glass-highlight: rgba(255, 255, 255, 0.8);
+  --glass-shadow: 0 6px 22px -10px rgba(17, 18, 20, 0.25);
 }
 
 [data-theme='dark'] {
@@ -30,4 +36,10 @@
   --accent: #5b9dff;
   --accent-muted: #2f4a73;
   --code-bg: #15181d;
+
+  /* glassmorphism (dark) */
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-highlight: rgba(255, 255, 255, 0.12);
+  --glass-shadow: 0 8px 26px -10px rgba(0, 0, 0, 0.6);
 }
