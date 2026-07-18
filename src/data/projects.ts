@@ -5,7 +5,7 @@ export const projects: Project[] = [
     name: 'PGS Browser',
     blurb:
       'A public web platform for personalized polygenic score analysis and interpretation, benchmarked across ancestries in FinnGen.',
-    stack: ['Python', 'Docker'],
+    stack: ['Python', 'Docker', 'bash', 'scikit-survival'],
     year: 2026,
     repo: 'https://github.com/faramer86/PGS_Browser',
     url: 'https://pgs.nchigm.org',
