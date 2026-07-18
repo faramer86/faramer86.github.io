@@ -1,6 +1,6 @@
 .proj { padding: var(--space-6) 0; border-top: 1px solid var(--border); list-style: none; }
 .proj-head { display: flex; align-items: baseline; justify-content: space-between; }
-.proj-name { margin: 0; font-size: 1.05rem; }
+.proj-name { margin: 0; font-size: 1.2rem; line-height: 1.35; font-weight: 700; }
 .proj-year { font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); }
 .proj-blurb { margin: var(--space-2) 0; color: var(--text-muted); }
 .proj-stack { display: flex; gap: var(--space-2); flex-wrap: wrap; }
