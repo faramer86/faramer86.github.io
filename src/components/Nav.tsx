@@ -14,20 +14,22 @@ const links = [
 export function Nav() {
   return (
     <nav className="nav">
-      <ul className="nav-links">
-        {links.map((l) => (
-          <li key={l.to}>
-            <NavLink
-              to={l.to}
-              end={l.end}
-              style={{ '--section-color': sectionColor[l.to] } as CSSProperties}
-            >
-              {l.label}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
-      <div className="nav-toggle"><ThemeToggle /></div>
+      <div className="nav-pill">
+        <ul className="nav-links">
+          {links.map((l) => (
+            <li key={l.to}>
+              <NavLink
+                to={l.to}
+                end={l.end}
+                style={{ '--section-color': sectionColor[l.to] } as CSSProperties}
+              >
+                {l.label}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+        <div className="nav-toggle"><ThemeToggle /></div>
+      </div>
     </nav>
   )
 }

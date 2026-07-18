@@ -5,14 +5,16 @@ import Home from './Home'
 import { profile } from '../data/profile'
 
 describe('Home', () => {
-  it('renders name, role, summary, and quick links', () => {
+  it('renders name, badges, summary, and quick links', () => {
     render(
       <MemoryRouter>
         <Home />
       </MemoryRouter>,
     )
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(profile.name)
-    expect(screen.getByText(new RegExp(profile.role))).toBeInTheDocument()
+    for (const badge of profile.badges) {
+      expect(screen.getByText(badge)).toBeInTheDocument()
+    }
     expect(screen.getByText(profile.summary)).toBeInTheDocument()
     expect(screen.getByRole('link', { name: /Posts/ })).toHaveAttribute('href', '/posts')
     expect(screen.getByRole('link', { name: /Publications/ })).toHaveAttribute('href', '/publications')
