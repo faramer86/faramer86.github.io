@@ -4,7 +4,6 @@ import Home from './pages/Home'
 import Publications from './pages/Publications'
 import Software from './pages/Software'
 import Posts from './pages/Posts'
-import Post from './pages/Post'
 import NotFound from './pages/NotFound'
 
 export default function App() {
@@ -15,7 +14,6 @@ export default function App() {
         <Route path="/publications" element={<Publications />} />
         <Route path="/software" element={<Software />} />
         <Route path="/posts" element={<Posts />} />
-        <Route path="/posts/:slug" element={<Post />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>

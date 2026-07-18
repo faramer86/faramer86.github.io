@@ -1,15 +1,10 @@
-export interface PostMeta {
-  slug: string
+// An external article (Medium / Substack) linked from the Posts page.
+export interface WritingLink {
   title: string
+  platform: string      // e.g. 'Medium' | 'Substack'
+  url: string
   date: string          // ISO 'YYYY-MM-DD'
-  summary: string
-  tags: string[]
-  draft: boolean
-  readingMinutes: number
-}
-
-export interface Post extends PostMeta {
-  content: string       // markdown body (frontmatter stripped)
+  summary?: string
 }
 
 export interface Publication {
