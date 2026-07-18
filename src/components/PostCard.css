@@ -1,6 +1,0 @@
-.post-card { padding: var(--space-6) 0; border-top: 1px solid var(--border); list-style: none; }
-.post-card-title { margin: 0 0 var(--space-1); font-size: 1.1rem; }
-.post-card-title a { color: var(--text); }
-.post-card-title a:hover { color: var(--accent); text-decoration: none; }
-.post-card-meta { font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); }
-.post-card-summary { margin: var(--space-2) 0 0; color: var(--text-muted); }

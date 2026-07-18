@@ -1,0 +1,20 @@
+.writing-card { padding: var(--space-6) 0; border-top: 1px solid var(--border); list-style: none; }
+.writing-card:first-child { border-top: none; padding-top: 0; }
+
+.writing-card-link { display: block; color: inherit; }
+.writing-card-link:hover { text-decoration: none; }
+
+.writing-card-head { display: flex; align-items: baseline; gap: var(--space-3); }
+.writing-card-title { margin: 0; font-size: 1.1rem; color: var(--text); transition: color var(--transition); }
+.writing-card-link:hover .writing-card-title { color: var(--accent); }
+.writing-card-arrow { margin-left: auto; color: var(--text-muted); font-size: 0.9rem; transition: color var(--transition), transform var(--transition); }
+.writing-card-link:hover .writing-card-arrow { color: var(--accent); transform: translate(2px, -2px); }
+
+.writing-card-meta { display: flex; align-items: center; gap: var(--space-2); margin-top: var(--space-2); font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); }
+.writing-card-platform {
+  color: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 32%, transparent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  padding: 0.12rem 0.45rem; border-radius: 6px;
+}
+.writing-card-summary { margin: var(--space-2) 0 0; color: var(--text-muted); }

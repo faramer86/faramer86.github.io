@@ -4,8 +4,6 @@
 @import '@fontsource/inter/400.css';
 @import '@fontsource/inter/500.css';
 @import '@fontsource/inter/700.css';
-@import 'katex/dist/katex.min.css';
-@import 'highlight.js/styles/github.css';
 
 *, *::before, *::after { box-sizing: border-box; }
 
