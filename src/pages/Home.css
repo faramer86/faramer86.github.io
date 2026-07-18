@@ -47,14 +47,16 @@
   border-color: var(--section-color);
   background: color-mix(in srgb, var(--section-color) 18%, transparent);
 }
-/* Download CV stays a solid accent CTA (higher specificity beats .home-quick a). */
+/* Download CV: glassy blue CTA (kept opaque enough for readable white text). */
 .home-quick a.home-cv-btn {
-  background: var(--accent);
+  background: color-mix(in srgb, var(--accent) 88%, transparent);
   color: #fff;
-  border-color: var(--accent);
-  box-shadow: var(--glass-shadow);
+  border-color: color-mix(in srgb, var(--accent) 70%, transparent);
+  -webkit-backdrop-filter: blur(12px) saturate(1.3);
+  backdrop-filter: blur(12px) saturate(1.3);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), var(--glass-shadow);
 }
-.home-quick a.home-cv-btn:hover { opacity: 0.9; }
+.home-quick a.home-cv-btn:hover { background: color-mix(in srgb, var(--accent) 97%, transparent); }
 .home-social {
   display: flex; gap: var(--space-2); justify-content: center; flex-wrap: wrap;
   margin-top: var(--space-6);
