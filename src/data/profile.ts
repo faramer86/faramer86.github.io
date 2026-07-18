@@ -3,7 +3,7 @@ import type { Profile } from '../types'
 export const profile: Profile = {
   name: 'Nikita Kolosov',
   initials: 'NK',
-  role: 'PhD student',
+  role: 'PhD candidate',
   affiliation: 'Clinical Genomics & Biomedical Informatics',
   summary:
     'I build computational methods for interpreting rare-disease variants — turning genomic signal into clinical answers.',
