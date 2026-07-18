@@ -44,7 +44,7 @@ export default function Home() {
             {q.label} →
           </Link>
         ))}
-        <a className="home-cv-btn" href={`${import.meta.env.BASE_URL}cv.pdf`} download>Download CV ↓</a>
+        <a className="home-cv-btn" href={`${import.meta.env.BASE_URL}cv.pdf`} download="Nikita-Kolosov-CV.pdf">Download CV ↓</a>
       </div>
       <div className="home-social">
         {profile.links.map((l) => (
