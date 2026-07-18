@@ -13,14 +13,25 @@ const quickLinks = [
   { to: '/posts', label: 'Posts' },
 ]
 
+// Palette color per badge (cycles).
+const BADGE_COLORS = ['#EF476F', '#06D6A0', '#FFD166', '#118AB2']
+
 export default function Home() {
   return (
     <div className="home">
       <Seo title={profile.name} description={profile.summary} />
       <AnimatedName />
-      <p className="home-role">
-        {profile.role} <span>· {profile.affiliation}</span>
-      </p>
+      <div className="home-badges">
+        {profile.badges.map((b, i) => (
+          <span
+            key={b}
+            className="home-badge"
+            style={{ '--badge-color': BADGE_COLORS[i % BADGE_COLORS.length] } as CSSProperties}
+          >
+            {b}
+          </span>
+        ))}
+      </div>
       <p className="home-summary">{profile.summary}</p>
       <div className="home-quick">
         {quickLinks.map((q) => (

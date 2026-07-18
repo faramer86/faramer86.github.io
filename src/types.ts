@@ -45,5 +45,6 @@ export interface Profile {
   role: string
   affiliation: string
   summary: string
+  badges: string[]
   links: ProfileLink[]
 }

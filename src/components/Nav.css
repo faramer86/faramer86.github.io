@@ -1,29 +1,49 @@
 .nav {
-  position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: var(--space-6);
-  padding: var(--space-6) var(--space-6) 0;
+  padding: var(--space-6) var(--space-4) 0;
   font-size: 0.85rem;
 }
-.nav-links { display: flex; gap: var(--space-6); list-style: none; margin: 0; padding: 0; }
-.nav-links a { color: var(--text-muted); transition: color var(--transition); }
-.nav-links a[aria-current='page'] { color: var(--text); }
-/* Hover previews the section's accent color (matches the home buttons). */
-.nav-links a:hover { color: var(--section-color, var(--text)); text-decoration: none; }
-.nav-toggle { position: absolute; right: var(--space-6); top: var(--space-4); }
 
-@media (max-width: 640px) {
-  .nav { flex-wrap: wrap; gap: var(--space-3); }
-  .nav-toggle { position: static; }
+/* Frosted-glass segmented control: capsule with the active route as a filled pill. */
+.nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0.32rem 0.4rem;
+  border-radius: 999px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  -webkit-backdrop-filter: blur(14px) saturate(1.3);
+  backdrop-filter: blur(14px) saturate(1.3);
+  box-shadow: inset 0 1px 0 var(--glass-highlight), var(--glass-shadow);
 }
 
-/* Touch devices (or narrow viewports): give nav links a >=44px tap height
-   without changing the compact look on pointer:fine desktop screens. */
+.nav-links { display: flex; align-items: center; gap: var(--space-1); list-style: none; margin: 0; padding: 0; }
+.nav-links a {
+  display: inline-block;
+  color: var(--text-muted);
+  padding: 0.46rem 0.85rem;
+  border-radius: 999px;
+  transition: color var(--transition), background var(--transition);
+}
+.nav-links a:hover { color: var(--section-color, var(--text)); text-decoration: none; }
+/* Active route = filled segment. */
+.nav-links a[aria-current='page'] {
+  color: var(--text);
+  background: color-mix(in srgb, var(--text) 10%, transparent);
+  box-shadow: inset 0 1px 0 var(--glass-highlight);
+}
+
+.nav-toggle { display: inline-flex; margin-left: var(--space-1); }
+
+@media (max-width: 640px) {
+  .nav-pill { flex-wrap: wrap; justify-content: center; border-radius: 20px; }
+}
+
+/* Touch devices (or narrow viewports): larger tap targets. */
 @media (pointer: coarse), (max-width: 640px) {
   .nav-links a {
-    display: inline-block;
-    padding-block: 0.7rem;
+    padding-block: 0.6rem;
   }
 }
