@@ -8,3 +8,4 @@ docs/superpowers/
 vite.config.js
 vite.config.d.ts
 .claude/
+.gstack/
