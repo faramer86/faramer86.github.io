@@ -8,12 +8,11 @@ export const profile: Profile = {
   summary:
     'I build computational methods for interpreting rare-disease variants — turning genomic signal into clinical answers.',
   badges: ['PhD candidate', 'Biomedical Informatics', 'Machine Learning'],
-  // Replace the placeholder profile URLs below with your real profiles.
   links: [
-    { label: 'GitHub', href: 'https://github.com/', icon: 'github' },
-    { label: 'Google Scholar', href: 'https://scholar.google.com/', icon: 'scholar' },
-    { label: 'ORCID', href: 'https://orcid.org/', icon: 'orcid' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/', icon: 'linkedin' },
-    { label: 'ResearchGate', href: 'https://www.researchgate.net/', icon: 'researchgate' },
+    { label: 'GitHub', href: 'https://github.com/faramer86', icon: 'github' },
+    { label: 'Google Scholar', href: 'https://scholar.google.com/citations?user=5erZl3wAAAAJ&hl=en', icon: 'scholar' },
+    { label: 'ORCID', href: 'https://orcid.org/0000-0002-2139-6775', icon: 'orcid' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/nikolosov', icon: 'linkedin' },
+    { label: 'ResearchGate', href: 'https://www.researchgate.net/profile/Nikita-Kolosov', icon: 'researchgate' },
   ],
 }
