@@ -1,0 +1,65 @@
+/* Publications page header: title left, heatmap right; wraps on narrow screens. */
+.pub-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  margin: 0 0 var(--space-6);
+}
+.pub-header h1 {
+  margin: 0;
+}
+
+.pub-heatmap {
+  --cell-size: 11px;
+  --cell-gap: 3px;
+  flex: 0 0 auto;
+  padding-top: 2px;
+}
+.pub-heatmap-grid {
+  display: grid;
+  grid-template-columns: auto repeat(12, var(--cell-size));
+  gap: var(--cell-gap);
+  align-items: center;
+}
+.pub-heatmap-mhead {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  line-height: 1;
+  color: var(--text-muted);
+  text-align: center;
+}
+.pub-heatmap-year {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: 1;
+  color: var(--text-muted);
+  text-align: right;
+  padding-right: 4px;
+}
+.pub-heatmap-cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--text) 7%, transparent);
+  border: 1px solid color-mix(in srgb, var(--text) 6%, transparent);
+}
+.pub-heatmap-cell.on {
+  background: var(--cell);
+  border-color: transparent;
+}
+.pub-heatmap-cell.on:hover {
+  outline: 1.5px solid color-mix(in srgb, var(--text) 45%, transparent);
+  outline-offset: 1px;
+}
+
+/* On narrow screens the heatmap wraps below the title; give it a little air. */
+@media (max-width: 640px) {
+  .pub-header {
+    gap: var(--space-4);
+  }
+  .pub-heatmap {
+    --cell-size: 12px;
+  }
+}
