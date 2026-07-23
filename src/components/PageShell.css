@@ -9,14 +9,6 @@
   box-shadow: inset 0 1px 0 var(--glass-highlight), var(--glass-shadow);
 }
 
-/* Inner-page title sits tight to the card's top padding, so every page header
-   aligns at the same height. (Publications drives its own h1 via .pub-header;
-   this targets the bare h1 on Software/Posts, which otherwise keep the browser
-   default top margin and sit lower.) */
-.page-box > h1 {
-  margin: 0 0 var(--space-6);
-}
-
 @media (max-width: 640px) {
   .page-box {
     padding: var(--space-6) var(--space-4) var(--space-8);

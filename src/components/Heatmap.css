@@ -1,0 +1,65 @@
+/* Inner-page header: title left, heatmap right; wraps on narrow screens. */
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  margin: 0 0 var(--space-6);
+}
+.page-header h1 {
+  margin: 0;
+}
+
+/* GitHub-contribution-style matrix (years × months). */
+.heatmap {
+  --cell-size: 11px;
+  --cell-gap: 3px;
+  flex: 0 0 auto;
+  padding-top: 2px;
+}
+.heatmap-grid {
+  display: grid;
+  grid-template-columns: auto repeat(12, var(--cell-size));
+  gap: var(--cell-gap);
+  align-items: center;
+}
+.heatmap-mhead {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  line-height: 1;
+  color: var(--text-muted);
+  text-align: center;
+}
+.heatmap-year {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: 1;
+  color: var(--text-muted);
+  text-align: right;
+  padding-right: 4px;
+}
+.heatmap-cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--text) 7%, transparent);
+  border: 1px solid color-mix(in srgb, var(--text) 6%, transparent);
+}
+.heatmap-cell.on {
+  background: var(--cell);
+  border-color: transparent;
+}
+.heatmap-cell.on:hover {
+  outline: 1.5px solid color-mix(in srgb, var(--text) 45%, transparent);
+  outline-offset: 1px;
+}
+
+@media (max-width: 640px) {
+  .page-header {
+    gap: var(--space-4);
+  }
+  .heatmap {
+    --cell-size: 12px;
+  }
+}

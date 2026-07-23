@@ -25,6 +25,7 @@ export interface Project {
   blurb: string
   stack: string[]
   year: number
+  date?: string         // ISO 'YYYY-MM-DD' (optional; drives the Software heatmap)
   repo?: string
   url?: string
 }
