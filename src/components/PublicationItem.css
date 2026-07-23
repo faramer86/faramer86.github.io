@@ -5,12 +5,8 @@
 .pub-authors { font-size: 0.9rem; }
 .pub-authors strong { color: var(--text); }
 /* Journal badge — same treatment as the platform badge on Posts, tinted per
-   journal via --venue-color (set inline from venueColors.ts). fit-content keeps
-   the pill only as wide as the journal name while staying on its own line. */
+   journal via --venue-color (set inline from venueColors.ts). */
 .pub-venue {
-  display: block;
-  width: fit-content;
-  margin-top: var(--space-2);
   font-family: var(--font-mono);
   font-size: 0.78rem;
   color: var(--venue-color, var(--accent));
@@ -19,4 +15,15 @@
   padding: 0.12rem 0.45rem;
   border-radius: 6px;
 }
-.pub-links { display: flex; gap: var(--space-3); margin-top: var(--space-2); font-family: var(--font-mono); font-size: 0.8rem; }
+/* Journal badge + DOI/PDF/Code/Link on one row (links sit to the right of the badge). */
+.pub-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+.pub-link {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}

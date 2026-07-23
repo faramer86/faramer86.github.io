@@ -32,17 +32,19 @@ export function PublicationItem({ pub }: { pub: Publication }) {
       <div className="pub-body">
         <h2 className="pub-title">{pub.title}</h2>
         <Authors authors={pub.authors} />
-        <div
-          className="pub-venue"
-          style={{ '--venue-color': venueColor[pub.venue] ?? 'var(--accent)' } as CSSProperties}
-        >
-          {pub.venue}
-        </div>
-        <div className="pub-links">
+        <div className="pub-meta">
+          <span
+            className="pub-venue"
+            style={{ '--venue-color': venueColor[pub.venue] ?? 'var(--accent)' } as CSSProperties}
+          >
+            {pub.venue}
+          </span>
           {links
             .filter(([, href]) => href)
             .map(([label, href]) => (
-              <a key={label} href={href} target="_blank" rel="noreferrer">{label}</a>
+              <a key={label} className="pub-link" href={href} target="_blank" rel="noreferrer">
+                {label}
+              </a>
             ))}
         </div>
       </div>
