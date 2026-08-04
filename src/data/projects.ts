@@ -12,6 +12,15 @@ export const projects: Project[] = [
     url: 'https://pgs.nchigm.org',
   },
   {
+    name: 'Adjutant',
+    blurb:
+      'A PLINK2-derived C/C++ tool for core polygenic score pre- and post-processing steps.',
+    stack: ['C', 'C++'],
+    year: 2026,
+    date: '2026-08-03',
+    repo: 'https://github.com/faramer86/adjutant',
+  },
+  {
     name: 'Russian Biobank PheWeb',
     blurb:
       'An interactive PheWeb browser of genome-wide association results for a Russian population biobank (Almazov Centre, St. Petersburg).',
