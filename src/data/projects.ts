@@ -15,7 +15,7 @@ export const projects: Project[] = [
     name: 'Adjutant',
     blurb:
       'A PLINK2-derived C/C++ tool for core polygenic score pre- and post-processing steps.',
-    stack: ['C', 'C++'],
+    stack: ['C', 'C++', 'Claude Code'],
     year: 2026,
     date: '2026-08-03',
     repo: 'https://github.com/faramer86/adjutant',
