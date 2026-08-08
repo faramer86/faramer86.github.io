@@ -6,3 +6,24 @@
 .proj-stack { display: flex; gap: var(--space-2); flex-wrap: wrap; }
 .proj-tag { font-family: var(--font-mono); font-size: 0.75rem; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 0.15rem 0.6rem; }
 .proj-links { display: flex; gap: var(--space-3); margin-top: var(--space-3); font-family: var(--font-mono); font-size: 0.8rem; }
+
+/* Telegram channel chips, grouped one flex row per channel `group` (so Nature
+   and Reviews sit on separate lines). */
+.proj-channels { margin-top: var(--space-3); }
+.proj-channels-label {
+  font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;
+}
+.proj-channels-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.proj-channels-row + .proj-channels-row { margin-top: 6px; }
+.proj-channel {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: var(--font-mono); font-size: 0.72rem; white-space: nowrap;
+  color: var(--tg); text-decoration: none;
+  border: 1px solid color-mix(in srgb, var(--tg) 34%, transparent);
+  background: color-mix(in srgb, var(--tg) 12%, transparent);
+  border-radius: 6px; padding: 0.12rem 0.5rem;
+  transition: background var(--transition);
+}
+.proj-channel:hover { background: color-mix(in srgb, var(--tg) 22%, transparent); text-decoration: none; }
+.proj-channel svg { width: 11px; height: 11px; flex: 0 0 auto; }

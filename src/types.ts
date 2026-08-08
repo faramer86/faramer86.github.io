@@ -20,6 +20,12 @@ export interface Publication {
   tags?: string[]
 }
 
+export interface Channel {
+  label: string
+  href: string
+  group?: string        // channels sharing a group render on one row
+}
+
 export interface Project {
   name: string
   blurb: string
@@ -28,6 +34,7 @@ export interface Project {
   date?: string         // ISO 'YYYY-MM-DD' (optional; drives the Software heatmap)
   repo?: string
   url?: string
+  channels?: Channel[]  // e.g. Telegram channels a bot posts to
 }
 
 export interface ProfileLink {
