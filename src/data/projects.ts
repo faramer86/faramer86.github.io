@@ -40,7 +40,7 @@ export const projects: Project[] = [
     repo: 'https://github.com/faramer86/GPrior',
   },
   {
-    name: 'PaperPulse',
+    name: 'Paper Pulse Bot',
     blurb:
       'A Telegram bot that tracks new scientific-journal articles and posts them to topic-specific channels.',
     stack: ['Python'],
