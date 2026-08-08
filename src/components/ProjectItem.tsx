@@ -36,7 +36,9 @@ export function ProjectItem({ project }: { project: Project }) {
       )}
       {project.channels && project.channels.length > 0 && (
         <div className="proj-channels">
-          <div className="proj-channels-label">Channels</div>
+          <div className="proj-channels-label">
+            Channels <span className="proj-channels-hint">(click on a badge)</span>
+          </div>
           {channelRows(project.channels).map((row, i) => (
             <div key={i} className="proj-channels-row">
               {row.map((ch) => (
