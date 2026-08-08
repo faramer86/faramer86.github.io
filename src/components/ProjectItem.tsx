@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react'
 import type { Channel, Project } from '../types'
 import { BrandIcon } from './BrandIcon'
 import './ProjectItem.css'
@@ -39,7 +40,14 @@ export function ProjectItem({ project }: { project: Project }) {
           {channelRows(project.channels).map((row, i) => (
             <div key={i} className="proj-channels-row">
               {row.map((ch) => (
-                <a key={ch.href} className="proj-channel" href={ch.href} target="_blank" rel="noreferrer">
+                <a
+                  key={ch.href}
+                  className="proj-channel"
+                  href={ch.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={ch.color ? ({ '--ch-color': ch.color } as CSSProperties) : undefined}
+                >
                   <BrandIcon name="telegram" />
                   {ch.label}
                 </a>

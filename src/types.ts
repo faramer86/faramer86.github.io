@@ -24,6 +24,7 @@ export interface Channel {
   label: string
   href: string
   group?: string        // channels sharing a group render on one row
+  color?: string        // brand color for the chip (else falls back to Telegram blue)
 }
 
 export interface Project {

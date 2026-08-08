@@ -19,11 +19,11 @@
 .proj-channel {
   display: inline-flex; align-items: center; gap: 5px;
   font-family: var(--font-mono); font-size: 0.72rem; white-space: nowrap;
-  color: var(--tg); text-decoration: none;
-  border: 1px solid color-mix(in srgb, var(--tg) 34%, transparent);
-  background: color-mix(in srgb, var(--tg) 12%, transparent);
+  color: var(--ch-color, var(--tg)); text-decoration: none;
+  border: 1px solid color-mix(in srgb, var(--ch-color, var(--tg)) 34%, transparent);
+  background: color-mix(in srgb, var(--ch-color, var(--tg)) 12%, transparent);
   border-radius: 6px; padding: 0.12rem 0.5rem;
   transition: background var(--transition);
 }
-.proj-channel:hover { background: color-mix(in srgb, var(--tg) 22%, transparent); text-decoration: none; }
+.proj-channel:hover { background: color-mix(in srgb, var(--ch-color, var(--tg)) 22%, transparent); text-decoration: none; }
 .proj-channel svg { width: 11px; height: 11px; flex: 0 0 auto; }
