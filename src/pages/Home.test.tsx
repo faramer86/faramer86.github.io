@@ -3,6 +3,9 @@ import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import Home from './Home'
 import { profile } from '../data/profile'
+import { publications } from '../data/publications'
+import { projects } from '../data/projects'
+import { writing } from '../data/writing'
 
 describe('Home', () => {
   it('renders name, badges, summary, and quick links', () => {
@@ -19,6 +22,22 @@ describe('Home', () => {
     expect(screen.getByRole('link', { name: /Posts/ })).toHaveAttribute('href', '/posts')
     expect(screen.getByRole('link', { name: /Publications/ })).toHaveAttribute('href', '/publications')
     expect(screen.getByRole('link', { name: /Software/ })).toHaveAttribute('href', '/software')
+  })
+
+  it('shows each section link with its entry count taken from the data', () => {
+    render(
+      <MemoryRouter>
+        <Home />
+      </MemoryRouter>,
+    )
+    const counts: [string, number][] = [
+      ['Publications', publications.length],
+      ['Software', projects.length],
+      ['Posts', writing.length],
+    ]
+    for (const [label, count] of counts) {
+      expect(screen.getByRole('link', { name: new RegExp(`^${label} ${count}$`) })).toBeInTheDocument()
+    }
   })
 
   it('renders a Download CV button linking to cv.pdf', () => {
